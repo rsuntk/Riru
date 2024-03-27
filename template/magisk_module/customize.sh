@@ -48,11 +48,7 @@ extract "$ZIPFILE" 'verify.sh' "$TMPDIR/.vunzip"
 
 ui_print "- Extracting Magisk files"
 
-if [ "$MAGISK_VER_CODE" -ge 21000 ]; then
-  MAGISK_CURRENT_MODULE_PATH=$(magisk --path)/.magisk/modules/riru-core
-else
-  MAGISK_CURRENT_MODULE_PATH=/sbin/.magisk/modules/riru-core
-fi
+MAGISK_CURRENT_MODULE_PATH=/data/adb/modules/riru-core
 
 extract "$ZIPFILE" 'module.prop' "$MODPATH"
 cp "$MODPATH/module.prop" "$MODPATH/module.prop.bk"
